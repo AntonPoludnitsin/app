@@ -1,0 +1,123 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <title>validation</title>
+  <style>
+    .form {
+      border: 2px solid;
+      border-radius: 5px;
+    }
+
+    .content {
+      display: flex;
+    }
+
+    .card {
+      margin-left: 300px;
+      border: 2px solid;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <div class="form">
+      <p>Пожалуйста, заполните все поля!</p>
+      E-mail: <input id="email" name="email" type="text">
+      <span id="valueEmail"></span><br>
+      Пароль: <input id="password" name="password" type="text">
+      <span id="valuePassword"></span><br>
+      <input name="button" type="submit" value="Проверить" onClick="validMail(); validPassword()">
+    </div>
+
+    <div class="card">
+      <p>Пожалуйста, заполните все поля!</p>
+      Номер карты: <input id="cardNumber" name="cardNumber" type="text">
+      <span id="valueNumber"></span><br>
+      Месяц:<input id="month" name="month" type="text">
+      <span id="valueMonth"></span><br>
+      Год:<input id="year" name="year" type="text">
+      <span id="valueYear"></span><br>
+      Имя владельца:<input id="cardholderName" name="cardholderName" type="text">
+      <span id="valueCardholderName"></span><br>
+      CVV2:<input id="CVV" name="CVV" type="text">
+      <span id="valueCVV"></span><br>
+
+      <input name="button" type="submit" value="Проверить"
+        onClick="validNumber(); validMonth(); validYear(); validName(); validCVV()">
+
+    </div>
+  </div>
+
+
+  <script type="text/javascript">
+
+    function validMail() {
+      let reg = /^[a-zA-Z][\w-\.]+@\w+\.[a-z]{2,4}$/i;
+      let mail = document.getElementById('email').value;
+      let valid = reg.test(mail);
+      if (valid) output = 'Адрес эл. почты корректен!';
+      else output = 'Адрес эл. почты некорректен!';
+      document.getElementById('valueEmail').innerHTML = output;
+    }
+
+    function validPassword() {
+      var reg = /^(?=.*[0-9])\w{8,}$/;
+      var password = document.getElementById('password').value;
+      var valid = reg.test(password);
+      if (valid) output = 'Пароль подходит';
+      else output = 'Введите другой пароль!';
+      document.getElementById('valuePassword').innerHTML = output;
+    }
+
+    function validNumber() {
+      var reg = /^\d{12}$/;
+      var cardNumber = document.getElementById('cardNumber').value;
+      var valid = reg.test(cardNumber);
+      if (valid) output = 'Номер верный';
+      else output = 'Номер карты некорректен!';
+      document.getElementById('valueNumber').innerHTML = output;
+    }
+
+    function validMonth() {
+      var reg = /^0[1-9]|1[0-2]$/;
+      var month = document.getElementById('month').value;
+      var valid = reg.test(month);
+      if (valid) output = 'Месяц корректен';
+      else output = 'Месяц некорректен!';
+      document.getElementById('valueMonth').innerHTML = output;
+    }
+
+    function validYear() {
+      var reg = /^\d{4}$/;
+      var year = document.getElementById('year').value;
+      var valid = reg.test(year);
+      if (valid) output = 'Год корректен';
+      else output = 'Год некорректен!';
+      document.getElementById('valueYear').innerHTML = output;
+    }
+
+    function validName() {
+      var reg = /^[a-z]+\s[a-z]+$/i;
+      var cardholderName = document.getElementById('cardholderName').value;
+      var valid = reg.test(cardholderName);
+      if (valid) output = 'Имя корректно';
+      else output = 'Имя некорректно!';
+      document.getElementById('valueCardholderName').innerHTML = output;
+    }
+
+    function validCVV() {
+      var reg = /^\d{3}$/;
+      var CVV = document.getElementById('CVV').value;
+      var valid = reg.test(CVV);
+      if (valid) output = 'Код корректен';
+      else output = 'Код некорректен!';
+      document.getElementById('valueCVV').innerHTML = output;
+    }
+
+  </script>
+</body>
+
+</html>

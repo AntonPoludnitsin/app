@@ -1,0 +1,89 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <title>arrays</title>
+
+</head>
+
+<body>
+
+
+
+  <script type="text/javascript">
+    let goods = [
+      {
+        id: 1,
+        name: 'Tovar2',
+        rating: 4.5,
+        description: 'Here description of item..',
+        price: 105,
+        category: 'food'
+      },
+      {
+        id: 2,
+        name: 'Tovar3',
+        rating: 5,
+        description: 'Here description of item..',
+        price: 100,
+        category: 'food'
+      },
+      {
+        id: 0,
+        name: 'Tovar1',
+        rating: 4,
+        description: 'Here description of item..',
+        price: 95,
+        category: 'food'
+      }
+
+    ];
+
+    function getItemByName(goods, name) {
+      let result = goods.find(item => item.name == name);
+      console.log(result);
+    }
+
+    //getItemByName(goods, "Tovar1");
+
+    function filter(goods, field, options) {
+      if (typeof field === "string" && options === "max") {
+        goods.sort((a, b) => a[field] > b[field] ? 1 : -1);
+      }
+
+      if (typeof field === "string" && options === "min") {
+        goods.sort((a, b) => a[field] < b[field] ? 1 : -1);
+      }
+
+      if (typeof field === "number" && options === "max") {
+        goods.sort((a, b) => a[field] - b[field]);
+      }
+
+      if (typeof field === "number" && options === "min") {
+        goods.sort((a, b) => b[field] - a[field]);
+      }
+
+    }
+
+    //filter(goods, "name", "max");
+
+    //console.log(goods);
+
+
+
+    function deleteItem(goods, id) {
+      goods.splice(id, 1);
+      console.log(goods);
+    }
+
+    //deleteItem(goods, 0)
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>
