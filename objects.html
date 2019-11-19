@@ -1,0 +1,45 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <title>objects</title>
+
+</head>
+
+<body>
+  <script type="text/javascript">
+
+    
+    var Cart = function(){
+        
+      }
+
+      Cart.prototype.add = function (id, name, rating) {        
+        this.id = id,
+        this.name = name,
+        this.rating = rating        
+      }
+
+      Cart.prototype.show = function () {
+        console.log(cart);
+      }
+
+      Cart.prototype.delete = function (id) {
+        return delete (this.id);
+         
+      }
+
+      var cart = new Cart();
+      console.log(cart);
+      cart.add(0 ,'Tovar1', 4.9);
+      cart.add(1 ,'Tovar2', 4.9);
+      
+      
+      console.log(cart); 
+
+      
+
+  </script>
+</body>
+
+</html>
