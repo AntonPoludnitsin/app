@@ -10,30 +10,39 @@
   <script type="text/javascript">
 
     
-    var Cart = function(){
+     var Cart = function () {
+        this.id = 0,
+        this.name = "Tovar" + 1,
+        this.rating = 4.9
+    }
+
+    Cart.prototype.add = function () {
         
-      }
+        var number = cart.id + 1;
+        cart.id++;
+        cart.name = "Tovar" + number;
+        
+    }
 
-      Cart.prototype.add = function (id, name, rating) {        
-        this.id = id,
-        this.name = name,
-        this.rating = rating        
-      }
+    Cart.prototype.show = function () {
+      console.log(cart);
+    }
 
-      Cart.prototype.show = function () {
-        console.log(cart);
-      }
+    Cart.prototype.delete = function (id) {
+      return delete (this.id);
 
-      Cart.prototype.delete = function (id) {
-        return delete (this.id);
-         
-      }
+    }
 
-      var cart = new Cart();      
-      cart.add(0 ,'Tovar1', 4.9);
-      cart.add(1 ,'Tovar2', 4.9);
-      cart.delete(1);
-      cart.show();
+    var cart = new Cart();
+
+    console.log(cart);
+    cart.add();
+
+
+    //cart.delete(1);
+    cart.show();
+
+
       
       
       
