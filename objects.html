@@ -31,7 +31,57 @@
 
         Cart.prototype.show = function () {
             console.log(this.order);
-        } 
+        }
+    
+  // Классы    
+  class Car {
+  constructor() {
+    this.orders = [];
+  
+
+    this.add = ({ id, name, rating }) => {
+      this.orders.push({
+        id: id,
+        name: name,
+        rating: rating
+      });
+    }
+
+    this.delete = (id) => {
+      this.orders = this.orders.filter((item) => item.id !== id);
+    }
+
+    this.show = () => {
+      console.log(this.orders);
+    }
+  }
+}
+
+const car = new Car();
+
+car.add({
+    id: 2,
+    name: "Mercedes-benz",
+    rating: "3.2"
+  });
+  
+  car.add({
+    id: 4,
+    name: "Volga",
+    rating: "5"
+  });
+  
+  car.add({
+    id: 1,
+    name: "Vaz 2109",
+    rating: "3.9"
+  });
+  
+  car.show();
+  
+  car.delete(4);
+  
+  console.log(car);
     
   </script>
 </body>
