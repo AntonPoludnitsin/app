@@ -47,22 +47,11 @@
     //getItemByName(goods, "Tovar1");
 
     function filter(goods, field, options) {
-      if (typeof field === "string" && options === "max") {
+      if ( options === "max") {
         goods.sort((a, b) => a[field] > b[field] ? 1 : -1);
+      } else if ( options === "min") {
+        goods.sort((a, b) => a[field] > b[field] ? 1 : -1).reverse();
       }
-
-      if (typeof field === "string" && options === "min") {
-        goods.sort((a, b) => a[field] < b[field] ? 1 : -1);
-      }
-
-      if (typeof field === "number" && options === "max") {
-        goods.sort((a, b) => a[field] - b[field]);
-      }
-
-      if (typeof field === "number" && options === "min") {
-        goods.sort((a, b) => b[field] - a[field]);
-      }
-
     }
 
     //filter(goods, "name", "max");
