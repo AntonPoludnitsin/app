@@ -25,25 +25,25 @@
   <div class="content">
     <div class="form">
       <p>Пожалуйста, заполните все поля!</p>
-      E-mail: <input id="email" name="email" type="text">
-      <span id="valueEmail"></span><br>
-      Пароль: <input id="password" name="password" type="text">
-      <span id="valuePassword"></span><br>
+      <label>E-mail: <input id="email" name="email" type="text">
+        <span id="valueEmail"></span><br></label>
+      <label>Пароль: <input id="password" name="password" type="text">
+        <span id="valuePassword"></span><br></label>
       <input name="button" type="submit" value="Проверить" onClick="validMail(); validPassword()">
     </div>
 
     <div class="card">
       <p>Пожалуйста, заполните все поля!</p>
-      Номер карты: <input id="cardNumber" name="cardNumber" type="text">
-      <span id="valueNumber"></span><br>
-      Месяц:<input id="month" name="month" type="text">
-      <span id="valueMonth"></span><br>
-      Год:<input id="year" name="year" type="text">
-      <span id="valueYear"></span><br>
-      Имя владельца:<input id="cardholderName" name="cardholderName" type="text">
-      <span id="valueCardholderName"></span><br>
-      CVV2:<input id="CVV" name="CVV" type="text">
-      <span id="valueCVV"></span><br>
+      <label>Номер карты: <input id="cardNumber" name="cardNumber" type="text">
+        <span id="valueNumber"></span><br></label>
+      <label>Месяц:<input id="month" name="month" type="text">
+        <span id="valueMonth"></span><br></label>
+      <label>Год:<input id="year" name="year" type="text">
+        <span id="valueYear"></span><br></label>
+      <label>Имя владельца:<input id="cardholderName" name="cardholderName" type="text">
+        <span id="valueCardholderName"></span><br></label>
+      <label>CVV2:<input id="CVV" name="CVV" type="text">
+        <span id="valueCVV"></span><br></label>
 
       <input name="button" type="submit" value="Проверить"
         onClick="validNumber(); validMonth(); validYear(); validName(); validCVV()">
