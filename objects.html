@@ -10,45 +10,29 @@
   <script type="text/javascript">
 
     
-     var Cart = function () {
-        this.id = 0,
-        this.name = "Tovar" + 1,
-        this.rating = 4.9
-    }
+     function Cart() {
+            this.order = [];
+        }
 
-    Cart.prototype.add = function () {
-        
-        var number = cart.id + 1;
-        cart.id++;
-        cart.name = "Tovar" + number;
-        
-    }
+        Cart.prototype.add = function ({ id, name, rating, description, price, category }) {
+            this.order.push({
+                id: id,
+                name: name,
+                rating: rating,
+                description: description,
+                price: price,
+                category: category
+            });
+        }
 
-    Cart.prototype.show = function () {
-      console.log(cart);
-    }
+        Cart.prototype.delete = function (id) {
+            this.order = this.order.filter((item) => item.id !== id);
+        }
 
-    Cart.prototype.delete = function (id) {
-      return delete (this.id);
-
-    }
-
-    var cart = new Cart();
-
-    console.log(cart);
-    cart.add();
-
-
-    //cart.delete(1);
-    cart.show();
-
-
-      
-      
-      
-
-      
-
+        Cart.prototype.show = function () {
+            console.log(this.order);
+        } 
+    
   </script>
 </body>
 
